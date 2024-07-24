@@ -4,37 +4,62 @@
     <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico.ico" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>渦媄室內設計 KUO_MEI Interior Design</title>    
+    <title>渦媄室內裝修設計 KuoMei Interior Design</title>    
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="css/magnific-popup.css"> 
     <link rel="stylesheet" href="css/templatemo-ocean-vibes.css"> 
-<!--
+    <link rel="stylesheet" href="css/volumeicon.css">
     
-TemplateMo 554 Ocean Vibes
+<!--TemplateMo 554 Ocean Vibes  https://templatemo.com/tm-554-ocean-vibes  -->
 
-https://templatemo.com/tm-554-ocean-vibes
-
--->
 </head>
 <body>
     <header class="tm-site-header">
-        <span><img src="img/LOGO-3.png" height="50"></span> 
+        <span><img src="img/LOGO-3.png" height="50"></span>
+        <span><img src="img/USEFORCON.jpg" height="50"></span>  
         <br>
         <br>                 
-        <h1 class="tm-mt-0 tm-mb-15"><span class="tm-color-primary">渦媄</span> <span class="tm-color-gray-2">室內設計</span></h1>
-        <em class="tm-tagline tm-color-light-gray">KUO_MEI Interior Design</em>
+        <h1 class="tm-mt-0 tm-mb-15"><span class="tm-color-primary">渦媄</span> <span class="tm-color-gray-2">   室內裝修設計</span></h1>
+        <em class="tm-tagline tm-color-light-gray">KuoMei Interior Design   |  KMID</em>
     </header>
 
     <!-- Video banner 400 px height -->
     <div id="tm-video-container">
+        <button id="unmuteButton" onclick="unmuteVideo()">
+            <i class="fas fa-volume-up"></i> <!-- 喇叭图标 -->
+        </button>
         <video autoplay muted loop id="tm-video">
-            <source src="video/VID_20220320.mp4" type="video/mp4">
+            <source src="video/VID_HEAD.mp4" type="video/mp4">
         </video>  
         <i id="tm-video-control-button" class="fas fa-pause"></i>
     </div>
-    <p>即將上映拍好的影片，先用作者拍的可愛牛牛代替❤</p>
-    <p>MEI設計師偷懶的沒更新網頁，甚至好久沒用都有點忘記操作方式啦~嘿嘿</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var unmuteButton = document.getElementById('unmuteButton');
+            var video = document.getElementById('tm-video');
+            var isMuted = true; // 初始状态为静音
+    
+            unmuteButton.addEventListener('click', function() {
+                if (video) {
+                    isMuted = !isMuted; // 切换状态
+                    video.muted = isMuted; // 根据状态设置静音
+                    video.volume = isMuted ? 0 : 0.5; // 静音时音量为0，否则为0.5
+                    
+                    // 根据状态切换图标
+                    if (isMuted) {
+                        unmuteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // 静音图标
+                    } else {
+                        unmuteButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // 开声音图标
+                    }
+                }
+            });
+        });
+    </script>
+     
+    <p>即將播映團隊的作品影片，先用其他有趣的影片代替❤</p>
+    <p>請讓MEI我小小偷懶，我會記得更新網頁的~嘿嘿</p>
     <div class="tm-container">
         <nav class="tm-main-nav">
             <ul id="inline-popups">
@@ -48,7 +73,7 @@ https://templatemo.com/tm-554-ocean-vibes
                 </li>
                 <li class="tm-nav-item">
                     <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                         作品<br/>   
+                        作品<br/>   
                         Gallery
                         <!-- 放字 --> 
                         <i class="far fa-3x fa-images"></i>
@@ -384,8 +409,8 @@ https://templatemo.com/tm-554-ocean-vibes
                             我說，建築因你而存在!
                         </p>
                         <p>
-                            或許我們團隊不是最完美的，<br/>
-                            但我們團隊絕對是最認真的。
+                            或許我們團隊不是完美的，<br/>
+                            但我們團隊絕對是認真的。
                         </p>
                     </div>
                 </div>
@@ -403,10 +428,9 @@ https://templatemo.com/tm-554-ocean-vibes
                     <div class="tm-col tm-testimonial-col">
                         <!--第一段-->
                         <p>
-                            即將完善 coming soon<br/>
                             室內設計乙級技術士<br/>
                             室內裝修工程管理乙級技術士<br/>
-                            建築師執照<br/>                            
+                            建築師證書<br/>                            
                             <!--原本的內文
                             OCEAN vibes is free website template from 
                             <a rel="nofollow" href="https://templatemo.com" class="tm-color-primary">TemplateMo</a>
@@ -539,48 +563,29 @@ https://templatemo.com/tm-554-ocean-vibes
                 <!-- Do you need a working HTML contact form?
                 	Please visit https://templatemo.com/contact page -->
                     
-                    <form id="contact-form" action="" method="POST" class="tm-contact-form">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control rounded-0" placeholder="全名 Full Name" required />
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control rounded-0" placeholder="信箱 Email" required />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="Phone" class="form-control rounded-0" placeholder="電話 Phone" required />
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" id="contact-select" name="inquiry">
-                                <option value="-">簡單詢問 Short Inquiry</option>
-                                <option value="sales">項目諮詢 Project Consulting</option>
-                                <option value="creative">報價洽詢 Quotation Consultation</option>
-                                <option value="creative">網頁報錯 Web Bug</option>
-                                <option value="uiux">其他 Others</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="8" name="message" class="form-control rounded-0" placeholder="想跟渦媄說 Message(此表格尚未開發成功，如需聯絡請點地圖下方的表單填寫資訊，謝謝大大) " required=></textarea>
-                        </div>
+                      <!-- 嵌入 Google Form -->
+                          <div class="contact-container">
+                          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPdsWlPVgOhhlPbHUksQaFnpXmsvr3svYBxobG4PUD4JK2qQ/viewform?embedded=true" width="450" height="520" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+                         </div>
+                          </div>
+                         <div class="tm-col tm-contact-col tm-contact-col-r">
 
-                        <div class="form-group tm-text-right">
-                            <button type="submit" class="tm-btn tm-btn-primary">傳送｜Send it now</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="tm-col tm-contact-col tm-contact-col-r">
+
                     <!-- Map -->
                     <div class="mapouter tm-mb-40">
                         <div class="gmap_canvas">
-                            <iframe width="100%" height="520" id="gmap_canvas"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.979174090957!2d120.31736211496104!3d22.654565085140593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04e0274a57af%3A0xe39e970106a385b8!2zODA36auY6ZuE5biC5LiJ5rCR5Y2A6byO5bGx6KGX!5e0!3m2!1szh-TW!2stw!4v1647766357595!5m2!1szh-TW!2stw"
+                            <iframe width="100%" height="100%" id="gmap_canvas"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14732.744701184964!2d120.3059099!3d22.6095219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0313e380ffa9%3A0xefce258287edaafb!2zVU5JQ1VCRSDkup7lhYvllYbli5nkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1721814862185!5m2!1szh-TW!2stw"
                                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                         </div>
+       
+
                     </div>
 
                     <!-- Address -->
                     <address class="tm-mb-40">
-                        807 高雄市三民區鼎山街○○○○○○(進一步聯絡得到詳細資訊)<br/>
-                        ▋週一至五 09:00~18:00 ▋
+                        地址：806高雄市前鎮區中山二路91號11樓之1<br/>
+                        營業時間：週一至五 09:00~17:30 
                     </address>
 
                     <!-- Links -->
@@ -588,20 +593,20 @@ https://templatemo.com/tm-554-ocean-vibes
                         <li>                            
                             <a href="tel:0100200340">
                                 <i class="fas fa-phone tm-contact-link-icon"></i>
-                                Cel: +886 90013○○○○(進一步聯絡得到詳細資訊)
+                                電話: 07 334 0006
                             </a>
                          </li>
                         </li>
                         <li>
                             <a href="mailto:info@company.com">
                                 <i class="fas fa-at tm-contact-link-icon"></i>
-                                Email: kuomei20220303@gmail.com
+                                信箱: kuomei20220303@gmail.com
                             </a>
                         </li>                   
                         <li>
                             <a href="https://forms.gle/Ma3Z8QNceEDYkc9G7">
                                 <i class="fas fa-link tm-contact-link-icon"></i>
-                                點我 : 填寫聯絡表單
+                                業主請點我 : 進一步填寫需求表單
                             </a>
                         
                         
@@ -612,7 +617,7 @@ https://templatemo.com/tm-554-ocean-vibes
     </div>
 
     <footer class="tm-footer">
-        <span>Copyright &copy; 2022 KUO_MEI Interior Design</span>
+        <span>Copyright &copy; 2022 KuoMei Interior Design</span>
         <span>Web Designed by 
         <a href="https://templatemo.com" title="free website templates" target="_parent" rel="nofollow">TemplateMo</a></span>
 </footer>
