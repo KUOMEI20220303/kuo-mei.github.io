@@ -1,0 +1,27 @@
+/* volumeicon.css */
+#tm-video-container {
+    position: relative;
+    max-height: 400px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#tm-video {
+    width: 100%;
+    height: auto;
+}
+
+#unmuteButton {
+    position: absolute;
+    bottom: 18px;
+    right: 50px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    color: #e1e1e1;
+    cursor: pointer;
+}
+
+#unmuteButton i {
+    font-size: 20px;
+}
