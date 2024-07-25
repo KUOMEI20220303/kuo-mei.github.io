@@ -47,14 +47,15 @@ em { display: block; }
 div { box-sizing: border-box;}
 .tm-mt-35 { margin-top: 35px; }
 .tm-mb-0 { margin-bottom: 0; }
-.tm-mb-15 { margin-bottom: 15px; }
+.tm-mb-15 { margin-bottom: 15px;
+                     letter-spacing:5px; /* 標題字之間的間距 */}
 .tm-mb-30 { margin-bottom: 30px; }
 .tm-mb-40 { margin-bottom: 40px; }
 .tm-mb-50 { margin-bottom: 50px; }
 .tm-mb-80 { margin-bottom: 80px; }
 .tm-text-center { text-align: center; }
 .tm-text-right { text-align: right; }
-.tm-color-primary { color: #309AFD; }
+.tm-color-primary { color: #309AFD;margin-right:1ch; /* ch是字元的寬度單位，3ch表示3個字元的寬度 */ }
 .tm-color-gray { color: #666768; }
 .tm-color-gray-2 { color: #98999A; }
 .tm-color-light-gray { color: #9E9FA0; }
@@ -62,7 +63,7 @@ div { box-sizing: border-box;}
 .tm-bg-gray { background-color: #F1F2F3; }
 blockquote { margin: 0 0 30px 10px; }
 img { max-width: 100%; }
-.tm-page-title { font-size: 30px; }
+.tm-page-title { font-size: 30px;}
 
 body, ul {
     margin: 0;
@@ -82,20 +83,22 @@ a {
 
 .tm-tagline {
     font-size: 1.5rem;   
-    margin-left: 130px;
+    margin-left: 150px;
+    letter-spacing:2.5px; /* 標題字之間的間距 */
 }
 
 #tm-video-container {
     max-height: 400px;
     overflow: hidden;
     background-color: #333;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     position: relative;
 }
 
 #tm-video {
-    width: 100%;
-    height: auto;
+     width: 100%;
+     height: auto;
+     transform: translateY(-25%);
 }
 
 #tm-video-control-button {
@@ -108,7 +111,8 @@ a {
 
 .tm-nav-item {
     list-style: none;
-    margin: 22px;   
+    margin: 22px;
+    text-align: center ;/*字置中 */   
 }
 
 .tm-nav-link {
