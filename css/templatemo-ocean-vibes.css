@@ -1,3 +1,5 @@
+KMID
+
 /*
 
 TemplateMo 554 Ocean Vibes
@@ -48,7 +50,9 @@ div { box-sizing: border-box;}
 .tm-mt-35 { margin-top: 35px; }
 .tm-mb-0 { margin-bottom: 0; }
 .tm-mb-15 { margin-bottom: 15px;
-                     letter-spacing:5px; /* 標題字之間的間距 */}
+                     letter-spacing:5px; /* 標題字之間的間距 */
+                      line-height: 1.2; /* 根據需要調整行距 */
+}
 .tm-mb-30 { margin-bottom: 30px; }
 .tm-mb-40 { margin-bottom: 40px; }
 .tm-mb-50 { margin-bottom: 50px; }
@@ -63,7 +67,7 @@ div { box-sizing: border-box;}
 .tm-bg-gray { background-color: #F1F2F3; }
 blockquote { margin: 0 0 30px 10px; }
 img { max-width: 100%; }
-.tm-page-title { font-size: 30px;}
+.tm-page-title { font-size: 30px; }
 
 body, ul {
     margin: 0;
@@ -83,7 +87,7 @@ a {
 
 .tm-tagline {
     font-size: 1.5rem;   
-    margin-left: 150px;
+    margin-left: 250px;
     letter-spacing:2.5px; /* 標題字之間的間距 */
 }
 
@@ -99,6 +103,7 @@ a {
      width: 100%;
      height: auto;
      transform: translateY(-25%);
+     
 }
 
 #tm-video-control-button {
@@ -664,4 +669,4 @@ address {
     .tm-tagline {
         margin-left: 30px;
     }
-}
+}下午 07:38 2024/7/25
