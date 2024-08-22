@@ -4,7 +4,7 @@
     <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico.ico" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>渦媄室內裝修設計 KuoMei Interior Design</title>    
+    <title>渦媄室內裝修設計 ｜ KuoMei Interior Design</title>    
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="css/magnific-popup.css"> 
@@ -20,21 +20,127 @@
 
     gtag('config', 'G-H283MRQ77W');
     </script>
-
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457826457596278"
-     crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-5457826457596278">
     
 <!--TemplateMo 554 Ocean Vibes  https://templatemo.com/tm-554-ocean-vibes  -->
 
 </head>
 <body>
+     <!-- 过场画面 -->
+    
+    
+    <!-- 过场画面 JAVA -->
+   
+
+   
+
+    <!-- ▽ 设置自定义鼠標 -->
+    <div id="myCursor"></div>
+    <div id="circle"></div>
+    <!-- ▽ 设置自定义鼠標 JAVA -->
+     <script>
+      let cursor = document.getElementById("myCursor");
+    let circle = document.getElementById("circle");
+
+    window.addEventListener("mousemove",function(e){
+    let x = e.clientX;
+    let y = e.clientY;
+    cursor.style.left = x-27+"px";
+    cursor.style.top = y-27+"px";
+    circle.style.left = x-17+"px";
+    circle.style.top = y-17+"px";
+    
+    })  
+     </script>
+
+          <!-- 公告条 (注意字不要太長，否則會有顯示問題) -->
+    <div class="announcement-wrapper">
+        <button class="announcement-button left-button">&lt;</button>
+        <div class="announcement-bar"> 
+            <p>歡迎來到我們的網頁探險之旅！</p>           
+            <p>積極籌備中</p>
+            <p>敬請期待我們即將呈現的精彩設計作品！</p>            
+            <p>渦媄設計</p>
+            <p>讓我們的設計成為您生活的一部分！</p>
+            <p>多元化的設計服務，歡迎洽談合作</p>
+            <p>即將播映團隊的作品影片，先用其他有趣的影片代替❤。</p>
+            <p>讓MEI我小小偷懶，我會記得更新網頁的~嘿嘿</p>
+            <p>拉拉拉拉拉拉~啦啦啦啦啦啦啦啦啦~</p>
+        </div>
+        <button class="announcement-button right-button">&gt;</button>
+    </div>
+
+
+
+
+    <!-- 公告条 JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const announcements = document.querySelectorAll('.announcement-bar p');
+        const leftButton = document.querySelector('.left-button');
+        const rightButton = document.querySelector('.right-button');
+        let currentAnnouncement = 0;
+        const displayDuration = 5000; // 每条公告显示时间（毫秒）
+        const delayAfterButtonClick = 2000; // 按钮点击后暂停的时间（毫秒）
+        let intervalId;
+
+        function showAnnouncement(index) {
+            announcements.forEach((announcement, i) => {
+                announcement.classList.toggle('show', i === index);
+            });
+            currentAnnouncement = (index + announcements.length) % announcements.length;
+        }
+
+        function startCycle() {
+            intervalId = setInterval(() => {
+                showAnnouncement(currentAnnouncement + 1);
+            }, displayDuration);
+        }
+
+        function stopCycle() {
+            clearInterval(intervalId);
+        }
+
+        function showNextAnnouncement() {
+            stopCycle();
+            showAnnouncement(currentAnnouncement + 1);
+            setTimeout(startCycle, delayAfterButtonClick);
+        }
+
+        function showPreviousAnnouncement() {
+            stopCycle();
+            showAnnouncement(currentAnnouncement - 1);
+            setTimeout(startCycle, delayAfterButtonClick);
+        }
+
+        // 初始显示第一个公告
+        showAnnouncement(currentAnnouncement);
+
+        // 自动循环显示公告
+        startCycle();
+
+        // 左右按钮事件
+        leftButton.addEventListener('click', showPreviousAnnouncement);
+        rightButton.addEventListener('click', showNextAnnouncement);
+    });
+
+    </script>
+
+
+    <!--頁首 -->
+
     <header class="tm-site-header">
-        <span><img src="img/LOGO-3.png" height="50"></span>
-        <a href="https://jaagarchi.com">
-            <span><img src="img/USEFORCON.jpg" height="50"></span> 
-        </a> 
+        <div class="header-content">
+            <div class="header-images">
+                <span><img src="img/LOGO-2.jpg" height="100" class="header-logo"></span>
+                <a href="https://jaagarchi.com">
+                    <span><img src="img/USEFORCON.jpg" height="100" class="header-image"></span>
+                </a>
+            </div>
+            <div class="header-text">
+                <span class="header-text-content">KMID.intr</span>
+            </div>
+        </div>
+        
         <br>
         <br>                 
         <h1 class="tm-mt-0 tm-mb-15">
@@ -42,6 +148,18 @@
             <span class="tm-color-gray-2">室內裝修設計</span></h1>
         <em class="tm-tagline tm-color-light-gray">KuoMei Interior Design | KMID</em>
     </header>
+    <Script>
+        window.addEventListener('scroll', function() {
+      const headerContent = document.querySelector('.header-content');
+  
+      if (window.scrollY > 5) { // 當滾動超過 100px 時觸發變化
+          headerContent.classList.add('shrink');
+      } else {
+          headerContent.classList.remove('shrink');
+      }
+      });
+  
+      </Script>
 
     <!-- Video banner 400 px height -->
     <div id="tm-video-container">
@@ -77,8 +195,7 @@
         });
     </script>
      
-    <p>即將播映團隊的作品影片，先用其他有趣的影片代替❤</p>
-    <p>請讓MEI我小小偷懶，我會記得更新網頁的~嘿嘿</p>
+    
     <p></p>
     <div class="tm-container">
         <nav class="tm-main-nav">
@@ -574,7 +691,7 @@
                     <!-- Address -->
                     <address class="tm-mb-40">
                         地址：806高雄市前鎮區中山二路91號11樓之1<br/>
-                        營業時間：週一至五 09:00~17:30 
+                        營業時間：週一至五 09:30~17:00 (周三休)
                     </address>
 
                     <!-- Links -->
@@ -605,11 +722,74 @@
         </div>
     </div>
 
+    <!-- 頁腳1 -->
     <footer class="tm-footer">
-        <span>Copyright &copy; 2022 KuoMei Interior Design</span>
-        <span>Web Designed by 
-        <a href="https://templatemo.com" title="free website templates" target="_parent" rel="nofollow">TemplateMo</a></span>
-</footer>
+        <!-- 上層 -->
+        <div>
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;">
+                <!-- 第一欄位：LOGO 和公司名稱 -->
+                <div style="display: flex; align-items: flex-start; margin-right: 05px; margin-bottom: 25px;">
+                    <img src="img/LOGO-2.jpg" alt="Joannana Architect Group" style="height:100px; margin-right: 20px;">
+                    
+                </div>
+                <div style= "margin-right: 40px;">
+                    <h4 style="font-size: 1.2rem; margin: 0; color: #333;; white-space: nowrap;">渦媄設計</h4>
+                    <p style="margin: 0;; white-space: nowrap; margin-bottom: 25px;">KuoMei Design</p>
+                </div>
+
+                <!-- 第二欄位：辦公室資訊 -->
+                <div style="flex: 1; margin-right: 20px;">
+                    <h4 style="font-size: 1.2rem; margin: 0; color: #333;">辦公室</h4>
+                    <p style="margin: 0; white-space: nowrap;">806高雄市前鎮區中山二路91號11樓之1</p>
+                    <p style="margin: 0; white-space: nowrap;">07 334 0006</p>
+                    <p style="margin: 0; white-space: nowrap;"><a href="mailto:contact@jaagarchi.com" style="margin-bottom: 25px">kuomei20220303@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- 第三欄位：返回上層按鈕 -->
+            <div class="back-to-top">
+                <a href="#top" style="color:#fff; ">▲</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 頁腳2 -->
+    <footer class="tm-footer-bottom">
+        <!-- 下層 -->
+        <div>
+            <span style="white-space: nowrap; margin-right: 20px;">&copy; 2024 KuoMei Interior Design</span>
+        </div>
+        <div>
+            <a href="https://forms.gle/yGn3KzjcqsA7pjyUA">加入我們</a>
+            <a href="/terms-of-service.html" style="white-space: nowrap;">使用條款</a>
+            <a href="/privacy-policy.html" style="white-space: nowrap;">隱私保護</a>
+        </div>
+        
+    </footer>
+
+    <!-- 第三欄位：返回上層按鈕 JAVA -->
+    <script>
+    function adjustBackToTopButton() {
+        // 獲取返回按鈕和頁腳二元素
+        const backToTopButton = document.querySelector('.back-to-top');
+        const footerBottom = document.querySelector('.tm-footer-bottom');
+
+        if (backToTopButton && footerBottom) {
+            // 獲取頁腳二的高度
+            const footerBottomHeight = footerBottom.offsetHeight;
+
+            // 設置返回按鈕的 bottom 屬性為頁腳二的高度加上額外的間距
+            backToTopButton.style.bottom = `${footerBottomHeight + 10}px`;
+        }
+    }
+
+    // 調整按鈕位置在頁面加載時
+    window.addEventListener('load', adjustBackToTopButton);
+
+    // 調整按鈕位置在窗口尺寸改變時
+    window.addEventListener('resize', adjustBackToTopButton);
+
+    </script>
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/imagesloaded.pkgd.min.js"></script>
