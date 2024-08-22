@@ -81,15 +81,261 @@ a {
 
 .tm-mt-0 { margin-top: 0; }
 
+/* ▽頁首 */
+/* ▽ 过场动画 */
+
+/* △ 过场动画 */
+
+
+
+/*▽公告欄位 */
+/*公告条容器 */
+.announcement-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5; /* 浅灰色背景 */
+    z-index: 1000; /* 确保在其他内容上方 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 150px; /* 两侧留白 150px */
+    overflow: hidden;
+}
+
+/* 公告条 */
+.announcement-bar {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    flex: 1; /* 使公告条占据剩余空间 */
+    position: relative;
+    height: 35px; /* 公告条高度 */
+    overflow: hidden; /* 防止溢出 */
+    max-width: calc(100% - 200px); /* 留出按钮宽度 */
+    justify-content: center; /* 使公告项在容器中水平居中 */
+}
+
+/* 公告项 */
+.announcement-bar p {
+    position: absolute;
+    margin: 0;
+    font-size: 15px;
+    color: #309AFD; /* 字体颜色设置为红色 */
+    line-height: 30px; /* 使文字垂直居中 */
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+}
+
+/* 显示公告 */
+.announcement-bar p.show {
+    opacity: 1;
+}
+
+/* 左右按钮 */
+.announcement-button {
+    background-color: #ffffff00;
+    border: none;
+    color: #9e9e9e;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+}
+
+.announcement-button.left-button {
+    left: 150px; /* 距离屏幕左边缘 50px */
+}
+
+.announcement-button.right-button {
+    right: 150px; /* 距离屏幕右边缘 50px */
+}
+
+.announcement-button:focus {
+    outline: none;
+}
+
+/* 处理小屏幕的情况 */
+@media screen and (max-width: 600px) {
+    .announcement-wrapper {
+        padding: 0 20px; /* 减少左右留白 */
+    }
+
+    .announcement-bar {
+        max-width: calc(100% - 80px); /* 使用屏幕的全部宽度 */
+    }
+
+    .announcement-bar p {
+        font-size: 10px; /* 调整字体大小 */
+    }
+
+    .announcement-button {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .announcement-button.left-button {
+        left: 20px; /* 距离屏幕左边缘 20px */
+    }
+
+    .announcement-button.right-button {
+        right: 20px; /* 距离屏幕右边缘 20px */
+    }
+}
+/*△ 公告欄位 */
+/*▽ 设置自定义鼠標 */
+html, body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+/* 自定义光标的样式 */
+#myCursor {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: solid 1px #d9d9d9;
+    position: fixed; /* 使光标相对于视口固定 */
+    pointer-events: none; /* 确保鼠标事件不会干扰到自定义光标 */
+    transition-duration: 0.1s;
+    box-shadow: 0px 0px 15px 3px rgba(148, 214, 255, 1);
+    z-index: 10000; /* 确保在所有内容之上 */
+}
+
+/* 光标的内圆样式 */
+#circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    position: fixed; /* 使内圆相对于视口固定 */
+    pointer-events: none; /* 确保鼠标事件不会干扰到自定义光标 */
+    transition-duration: 0.15s;
+    box-shadow: 0px 0px 10px 7px rgba(148, 214, 255, 0.4);
+    z-index: 10001; /* 确保在 #myCursor 之上 */
+}
+/*△ 设置自定义鼠標 */
+
+/* 頁首的基本樣式 */
 .tm-site-header {
     padding: 60px 70px 30px;
 }
+
+/* 包含圖片和文字的容器 */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 保持圖片在左側 */
+    position: sticky;
+    top: 0;
+    background-color: white; /* 背景色填滿 */
+    z-index: 1000; /* 保證在其他內容上方 */
+    padding: 0px 0px; /* 初始內邊距 */
+    transition: all 0.5s ease; /* 平滑過渡效果 */
+    margin-bottom: -50px; /* 圖片和標題文字之間的距離 */
+
+}
+
+/* 調整圖片與背景邊緣的距離 */
+.header-images {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 圖片之間的距離 */
+}
+
+/* 圖片初始樣式 */
+.header-images .header-logo,
+.header-images .header-image {
+    height: 100px;
+}
+
+/* 隱藏文字 */
+.header-text {
+    display: none; /* 初始不顯示 */
+    margin-left: 20px; /* 文字與圖片之間的距離 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* 顯示滾動時的文字 */
+.header-content.shrink .header-text {
+    display: block; /* 滾動時顯示 */
+}
+
+/* 隨著滾動縮小圖片 */
+.header-content.shrink .header-logo,
+.header-content.shrink .header-image {
+    height: 60px; /* 縮小圖片 */
+}
+
+/* 固定顯示的文字樣式 */
+.header-text-content {
+    font-size: 20px; /* 調整字體大小 */
+    color: #333; /* 調整顏色 */
+}
+
+/* 滾動時背景固定的樣式 */
+.header-content.shrink {
+    position: fixed; /* 固定在頁面上方 */
+    top: 35px; /* 距離上方邊緣 55px */
+    left: 0;
+    width: 100%; /* 佔滿整個頁面寬度 */
+    padding: 25px 70px 10px; /* 調整內邊距 */
+    background-color: white; /* 背景顏色 */
+    border-bottom: 1px solid #ddd; /* 底部邊框 */
+    box-sizing: border-box; /* 確保 padding 和 border 不影響寬度 */
+}
+
+/* 調整圖片與背景之間的距離 */
+.header-content.shrink .header-images {
+    margin-top: 20px; /* 圖片縮小後與背景上邊緣保持 55px */
+    margin-bottom: 10px;
+}
+
+/* 當頁面滾動，圖片縮小後的樣式 */
+.header-content.shrink .header-images {
+    margin: 0 0px; /* 調整圖片之間的距離 */
+    gap: 10px; /* 調整圖片之間的距離 */
+}
+
+/* 確保圖片在小屏幕上保持正確的比例 */
+.header-images img {
+    width: auto; /* 使圖片寬度自動調整以保持比例 */
+    max-width: 100%; /* 確保圖片不超過容器寬度 */
+    height: auto; /* 使圖片高度自動調整以保持比例 */
+    object-fit: contain; /* 確保圖片在容器內保持原始比例 */
+}
+
+/* 對於特定的小屏幕尺寸進行調整 */
+@media (max-width: 320px) {
+    .header-images .header-logo,
+    .header-images .header-image {
+        height: 60px; /* 縮小圖片高度 */
+        max-width: 100%; /* 保持圖片不超過容器寬度 */
+    }
+
+    .header-content {
+        padding: 10px 20px; /* 調整內邊距以適應小屏幕 */
+    }
+
+    .header-text-content {
+        font-size: 14px; /* 調整字體大小 */
+    }
+}
+
+
+/* △頁首 */
+
 
 .tm-tagline {
     font-size: 1.5rem;   
     margin-left: 250px;
     letter-spacing:2.5px; /* 標題字之間的間距 */
 }
+
+/* ▽影片 */
 
 #tm-video-container {
     max-height: 400px;
@@ -103,7 +349,6 @@ a {
      width: 100%;
      height: auto;
      transform: translateY(-25%);
-     
 }
 
 #tm-video-control-button {
@@ -113,6 +358,37 @@ a {
     z-index: 1000;
     color: #e1e1e1;
 }
+/* 針對小螢幕的調整 */
+@media (max-width: 1024px) {
+    #tm-video {
+        transform: translate(0%, 0%) translateX(0%) translateY(-10%) scale(1.0); /* 減少Y軸偏移量並放大 */
+    }
+}
+
+@media (max-width: 768px) {
+    #tm-video {
+        transform: translate(0%, 0%) translateX(0%) translateY(00%) scale(1); /* 減少Y軸偏移量並放大 */
+    }
+}
+@media (max-width: 425px) {
+    #tm-video {
+        transform: translate(0%, 0%) translateX(5%) translateY(00%) scale(1); /* 減少Y軸偏移量並放大 */
+    }
+}
+
+@media (max-width: 375px) {
+    #tm-video {
+        transform: translate(0%, 0%) translateX(5%) translateY(00%) scale(1); /* 進一步減少Y軸偏移量並放大 */
+    }
+}
+
+@media (max-width: 320px) {
+    #tm-video {
+        transform: translate(0%, 0%) translateX(5%) translateY(00%) scale(1); /* 針對最小屏幕的調整並放大 */
+    }
+}
+
+/* △影片 */
 
 .tm-nav-item {
     list-style: none;
@@ -156,12 +432,146 @@ a {
     margin: 0 auto 135px;
 }
 
+/* ▽頁腳響應式 */
+
+/* 頁腳1 */
 .tm-footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 25px;
     font-size: 0.9em;
+    background-color: #ffffff;
+    color: #666;
+    position: relative;
+    width: 100vw;
+    box-sizing: border-box;
+    border-top: 1px solid #ddd; /* 確保邊框橫跨整個頁腳 */
 }
+
+.tm-footer .back-to-top {
+    position: fixed; /* 默認位置 */
+    bottom: 70px; /* 距離底部 70px */
+    right: 25px; /* 距離右邊 25px */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #309AFD;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* 確保按鈕在其他內容之上 */
+}
+
+.tm-footer .back-to-top:hover {
+    background-color: #1e7dff; /* 懸停時按鈕顏色 */
+}
+
+/* 當螢幕寬度小於 992px 時 */
+@media (max-width: 992px) {
+    .tm-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tm-footer .back-to-top {
+        position: fixed; /* 固定位置 */
+        right: 25px; /* 距離右邊 25px */
+        bottom: 25px; /* 預設距離底部 25px */
+    }
+}
+
+/* 當螢幕寬度小於 700px 時 */
+@media (max-width: 700px) {
+    .tm-footer {
+        padding: 15px;
+        font-size: 0.8em;
+    }
+
+    .tm-footer h4 {
+        font-size: 1rem;
+    }
+
+    .tm-footer img {
+        max-width: 100%; /* 使圖片不超過容器的寬度 */
+        height: auto; /* 保持圖片比例 */
+    }
+
+    .tm-footer a {
+        font-size: 1.2rem;
+    }
+}
+
+/* 當螢幕寬度小於 425px 時 */
+@media (max-width: 425px) {
+    .tm-footer p a {
+        font-size: 1rem; /* 確保字體大小一致 */
+        color: #666; /* 確保顏色一致 */
+    }
+}
+
+/* 頁腳2 */
+.tm-footer-bottom {
+    background-color: #f0f0f0;
+    color: #666;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd; /* 確保邊框橫跨整個頁腳 */
+}
+
+.tm-footer-bottom a {
+    margin-right: 15px;    
+    text-decoration: none;
+}
+
+.tm-footer-bottom a:hover {
+    text-decoration: none;
+}
+
+
+/* 當螢幕寬度小於 425px 時 */
+@media (max-width: 425px) {
+    .tm-footer-bottom {
+        flex-direction: column; /* 讓內容縱向排列 */
+        align-items: center; /* 居中對齊 */
+        text-align: center; /* 文字居中 */
+        padding: 15px; /* 調整內邊距 */
+    }
+
+    .tm-footer-bottom div {
+        margin-bottom: 5px; /* 分隔上下內容的間距 */
+    }
+     /* 如果需要更改更詳細的樣式 */
+     .tm-footer-bottom span {
+        margin-bottom: 5px; /* 調整版權信息和其他連結的間距 */
+    }
+
+    .tm-footer-bottom a {
+        margin: 10px; /* 調整連結間距 */
+    }
+}
+
+
+/* 自定義樣式 */
+select:not([multiple]) {
+    -webkit-appearance: none; /* 支援 Chrome, Safari, Opera */
+    -moz-appearance: none; /* 支援 Firefox */
+    appearance: none; /* 標準屬性 */
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    background-image: url(../img/select-arrow.png);
+    padding: 14px 20px;
+    padding-right: 20px;
+    color: #666;
+}
+
+/* △頁腳響應式 */
 
 .tm-close-popup {
     text-align: right;
@@ -494,6 +904,7 @@ figure.effect-chico:hover p {
 select:not([multiple]) {
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     background-position: right 15px center;
     background-repeat: no-repeat;
     background-image: url(../img/select-arrow.png);
@@ -669,4 +1080,4 @@ address {
     .tm-tagline {
         margin-left: 30px;
     }
-}下午 07:38 2024/7/25
+}
