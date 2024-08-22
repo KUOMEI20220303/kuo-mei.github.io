@@ -544,30 +544,35 @@ html, body {
 @media (max-width: 700px) {
     .footer-content {
         display: flex;
-        justify-content: center; /* 使 .footer-inner 在 .tm-footer 中水平置中 */
-        flex-direction: column; /* 确保 footer-content 内部的内容纵向排列 */
+        flex-direction: column; /* 確保內容縱向排列 */
+        align-items: left; /* 將項目水平置中 */
+        width: 100%; /* 使 footer-content 佔滿整個寬度 */
     }
 
     .logo-company {
-        flex-direction: column; /* 在小屏幕上将 LOGO 和公司名称纵向排列 */
-        align-items: flex-start; /* 靠左对齐 */
+        display: flex;
+        flex-direction: column; /* 確保 LOGO 和公司名稱縱向排列 */
+        align-items: left; /* 將 LOGO 和公司名稱水平置中 */
         width: 80%; /* 設定適當的寬度 */
+        margin-bottom: 20px; /* 調整 LOGO 和公司名稱與下方內容的間距 */
     }
 
     .logo-company img {
-        margin-bottom: 40px; /* 调整图片与下方内容的间距 */
+        margin-bottom: 30px; /* 調整圖片與公司名稱之間的間距 */
     }
 
     .company-info {
-        margin-right: 0; /* 移除右侧边距 */
-        margin-bottom: 0px; /* 调整图片与下方内容的间距 */
-        
-    }
-    .office-info  {
-        width: 80%; /* 設定適當的寬度 *//
+        margin-bottom: -20px; /* 調整公司名稱與辦公室資訊之間的間距 */
+        width: 80%; /* 設定適當的寬度 */
+        text-align: left; /* 使公司名稱靠左對齊 */
     }
 
-}    
+    .office-info {
+        width: 80%; /* 設定適當的寬度 */
+        text-align: left; /* 使辦公室資訊靠左對齊 */
+    }
+}
+ 
 
 
 /* 頁腳2 */
