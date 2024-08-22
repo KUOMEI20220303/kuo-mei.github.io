@@ -449,6 +449,64 @@ html, body {
     border-top: 1px solid #ddd; /* 確保邊框橫跨整個頁腳 */
 }
 
+.footer-container {
+    margin-left: 40px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-company {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 05px;
+    margin-bottom: 25px;
+}
+
+.logo-company img {
+    height: 100px;
+    margin-right: 20px;
+}
+
+.company-info {
+    margin-right: 40px;
+}
+
+.company-info h4 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+    white-space: nowrap;
+}
+
+.company-info p {
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
+    margin-bottom: 25px;
+}
+
+.office-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.office-info h4 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+.office-info p {
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
 .tm-footer .back-to-top {
     position: fixed; /* 默認位置 */
     bottom: 70px; /* 距離底部 70px */
@@ -476,42 +534,41 @@ html, body {
     }
 
     .tm-footer .back-to-top {
-        position: fixed; /* 固定位置 */
         right: 25px; /* 距離右邊 25px */
         bottom: 25px; /* 預設距離底部 25px */
     }
 }
+
+
 /* 當螢幕寬度小於 700px 時 */
 @media (max-width: 700px) {
-    .tm-footer div:first-child {
+    .footer-content {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* 使內容靠左對齊 */
+        justify-content: center; /* 使 .footer-inner 在 .tm-footer 中水平置中 */
+        flex-direction: column; /* 确保 footer-content 内部的内容纵向排列 */
     }
 
-    /* LOGO 和渦媄設計文字的樣式 */
-    .tm-footer div:first-child > div {
-        margin-right: 0; /* 移除原來的 margin */
-        margin-bottom: 15px; /* 調整 margin 以獲得一致的間距 */
+    .logo-company {
+        flex-direction: column; /* 在小屏幕上将 LOGO 和公司名称纵向排列 */
+        align-items: flex-start; /* 靠左对齐 */
+        width: 80%; /* 設定適當的寬度 */
     }
 
-    .tm-footer img {
-        margin-bottom: 10px; /* 確保 LOGO 與文字之間有間距 */
+    .logo-company img {
+        margin-bottom: 40px; /* 调整图片与下方内容的间距 */
     }
 
-    /* 地址信息的樣式 */
-    .tm-footer div:nth-child(2) {
-        text-align: left; /* 使地址信息靠左對齊 */
+    .company-info {
+        margin-right: 0; /* 移除右侧边距 */
+        margin-bottom: 0px; /* 调整图片与下方内容的间距 */
+        
     }
-}
+    .office-info  {
+        width: 80%; /* 設定適當的寬度 *//
+    }
 
-/* 當螢幕寬度小於 425px 時 */
-@media (max-width: 425px) {
-    .tm-footer p a {
-        font-size: 1rem; /* 確保字體大小一致 */
-        color: #666; /* 確保顏色一致 */
-    }
-}
+}    
+
 
 /* 頁腳2 */
 .tm-footer-bottom {
