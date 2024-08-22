@@ -159,7 +159,7 @@ a {
 }
 
 /* 处理小屏幕的情况 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .announcement-wrapper {
         padding: 0 20px; /* 减少左右留白 */
     }
