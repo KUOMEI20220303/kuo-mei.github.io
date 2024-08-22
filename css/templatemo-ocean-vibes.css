@@ -558,7 +558,7 @@ html, body {
     }
 
     .logo-company img {
-        margin-bottom: 30px; /* 調整圖片與公司名稱之間的間距 */
+        margin-bottom: 60px; /* 調整圖片與公司名稱之間的間距 */
     }
 
     .company-info {
