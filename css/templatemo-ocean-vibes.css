@@ -481,25 +481,27 @@ html, body {
         bottom: 25px; /* 預設距離底部 25px */
     }
 }
-
 /* 當螢幕寬度小於 700px 時 */
 @media (max-width: 700px) {
-    .tm-footer {
-        padding: 15px;
-        font-size: 0.8em;
+    .tm-footer div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* 使內容靠左對齊 */
     }
 
-    .tm-footer h4 {
-        font-size: 1rem;
+    /* LOGO 和渦媄設計文字的樣式 */
+    .tm-footer div:first-child > div {
+        margin-right: 0; /* 移除原來的 margin */
+        margin-bottom: 15px; /* 調整 margin 以獲得一致的間距 */
     }
 
     .tm-footer img {
-        max-width: 100%; /* 使圖片不超過容器的寬度 */
-        height: auto; /* 保持圖片比例 */
+        margin-bottom: 10px; /* 確保 LOGO 與文字之間有間距 */
     }
 
-    .tm-footer a {
-        font-size: 1.2rem;
+    /* 地址信息的樣式 */
+    .tm-footer div:nth-child(2) {
+        text-align: left; /* 使地址信息靠左對齊 */
     }
 }
 
